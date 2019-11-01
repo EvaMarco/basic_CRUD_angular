@@ -1,6 +1,14 @@
 # CrudExercise
 
+![EvaMarco](src/assets/eva&#32;logo.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.15.
+
+##  👩‍🔧️ How to start
+
+Clone online repository from [this link](https://github.com/EvaMarco/basic_CRUD_angular).
+
+Then install all dependences by running `npm install`.
 
 ## Development server
 
