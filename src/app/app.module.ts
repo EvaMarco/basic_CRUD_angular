@@ -9,6 +9,7 @@ import { UserAddComponent } from './user-add/user-add.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { UserDeleteComponent } from './user-delete/user-delete.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MessagesComponent } from './messages/messages.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     UserDetailComponent,
     UserAddComponent,
     UserEditComponent,
-    UserDeleteComponent
+    UserDeleteComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

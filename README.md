@@ -22,12 +22,12 @@ Then install all dependences by running `npm install`.
 3. Create basic user object.
 4. Create routes arrays in `app-routing.module.ts`
 5. Add router tag in app.component.html.
-6. Create Service of Api Rest `ng g service api`.
+6. Create Service of Api Rest `ng g service api`. And Create all functions
    1. Create `getUserList` function.
    2. Create `getUserByid` function.
    3. Create `createUser` function.
    4. Create `updateUser` function.
-   5. Create `deleteUser` function.
+   5. Create `deleteUser` function.   
 7. 
 
 

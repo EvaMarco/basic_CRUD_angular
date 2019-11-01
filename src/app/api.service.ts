@@ -19,7 +19,6 @@ export class ApiService {
   createUser(user: Object): Observable<Object> {
     return this.http.post(`${this.apiUrl}`, user);
   }
-
   updateUser (id, user: Object): Observable<Object> {
   return this.http.put(`${this.apiUrl}/${id}`, user);
   }

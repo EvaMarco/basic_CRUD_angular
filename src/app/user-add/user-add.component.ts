@@ -14,7 +14,7 @@ import { ApiService } from './../api.service';
           </div>
           <div class="form-group">
               <label for="name">BirthDate</label>
-              <input type="date" class="form-control" id="birthday" required [(ngModel)]="user.birthday" name="birthday">
+              <input type="date" class="form-control" id="birthdate" required [(ngModel)]="user.birthdate" name="birthdate">
           </div>
           <button type="submit" class="btn btn-success">Submit</button>
       </form>
