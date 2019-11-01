@@ -16,6 +16,7 @@ import { User } from "./user";
           <p class="user-name__title"> Name: </p>
           <p class="user-id__title"> Id: </p>
           <p class="user-link__title"> Link: </p>
+          <p class="user-link__title"> More</p>
         </li>
           <li
             *ngFor="let user of users | async"
@@ -53,9 +54,6 @@ export class UserList implements OnInit {
   getUserById(user: User){
     this.selectedUser = user;
     this.apiService.getUserById(user.id)
-    .subscribe(
-      error => console.log(error)
-    );
   }
 }
 

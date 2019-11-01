@@ -1,5 +1,5 @@
 .users__wrapper
-  margin: 40px
+  margin: 0 40px
   border: 1px solid lightgrey
   padding: 10px
 
@@ -15,15 +15,42 @@
 
 .user__list
   list-style: none
+  min-height: 48vh
+
+.selected
+  border: 2px solid grey
+
+
+li:nth-child(even)
+  background-color: #F2F2F2
+
 
 .user__item
   display: grid
-  grid-template-columns: 1fr 1fr 1fr
-  padding: 5px
+  grid-template-columns: 1fr 1fr 1fr 1fr
+  padding: 10px
+  border-bottom: 1px solid lightgrey
 
 .user-item__title
   border-bottom: 1px solid lightgrey
   display: grid
-  grid-template-columns: 1fr 1fr 1fr
+  grid-template-columns: 1fr 1fr 1fr 1fr
   font-weight: 700
   padding: 5px
+
+.btn
+  aparience: none
+  cursor: pointer
+  border: none
+  text-decoration: none
+  border-radius: 5px
+  background-color: #00A5BA
+  font-size: 15px
+  color: white
+  padding: 5px
+  width: 60px
+  display: flex
+  justify-content: center
+  align-items: center
+
+
