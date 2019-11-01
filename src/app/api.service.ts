@@ -6,7 +6,7 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = "/api/user";
+  private apiUrl = "http://hello-world.innocv.com/api/user";
 
   constructor(private http: HttpClient) { }
 
@@ -22,7 +22,7 @@ export class ApiService {
 
   updateUser (id, user: Object): Observable<Object> {
   return this.http.put(`${this.apiUrl}/${id}`, user);
-}
+  }
   deleteUser(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
