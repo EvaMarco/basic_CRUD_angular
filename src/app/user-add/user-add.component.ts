@@ -8,15 +8,31 @@ import { ApiService } from './../api.service';
     <h3 class= "create__title">Create User</h3>
     <div [hidden]="submitted" style="width: 400px;">
       <form (ngSubmit)="onSubmit()">
-          <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" required [(ngModel)]="user.name" name="name">
-          </div>
-          <div class="form-group">
-              <label for="name">BirthDate</label>
-              <input type="date" class="form-control" id="birthdate" required [(ngModel)]="user.birthdate" name="birthdate">
-          </div>
-          <button type="submit" class="btn btn-success">Submit</button>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="user.name"
+            name="name"
+            placeholder="Nombre"
+          >
+        </div>
+        <div class="form-group">
+          <label for="name">BirthDate</label>
+          <input
+            type="datetime"
+            class="form-control"
+            id="birthdate"
+            required
+            [(ngModel)]="user.birthdate"
+            name="birthdate"
+            placeholder="YYYY-MM-DDTHH:MM:SS.NNN"
+            >
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
       </form>
     </div>
     <div [hidden]="!submitted">

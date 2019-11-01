@@ -56,7 +56,7 @@ export class UserEditComponent implements OnInit {
     console.log(user)
   }
   save() {
-    this.apiService.updateUser(this.user.id, this.user)
+    this.apiService.updateUser(this.user)
       .subscribe(data => console.log(data), error => console.log(error));
       this.user = new User();
   }

@@ -19,10 +19,11 @@ export class ApiService {
   createUser(user: Object): Observable<Object> {
     return this.http.post(`${this.apiUrl}`, user);
   }
-  updateUser (id, user: Object): Observable<Object> {
-  return this.http.put(`${this.apiUrl}/${id}`, user);
+  updateUser (user: Object): Observable<Object> {
+  return this.http.put(`${this.apiUrl}`, user);
   }
   deleteUser(id: number): Observable<any> {
+
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }
