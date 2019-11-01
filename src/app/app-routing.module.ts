@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {UserList} from './main/main.component';
+import {UserList} from './user-list/userList.component';
 import {UserAddComponent} from './user-add/user-add.component';
 import {UserDeleteComponent} from './user-delete/user-delete.component';
 import {UserDetailComponent} from './user-detail/user-detail.component';
@@ -10,7 +10,7 @@ const routes: Routes = [
     { path: '', redirectTo: 'user', pathMatch: 'full' },
     { path: 'users', component: UserList },
     { path: 'add', component: UserAddComponent },
-    { path: 'edit', component: UserEditComponent },
+    { path: 'update', component: UserEditComponent },
     { path: 'delete', component: UserDeleteComponent },
     { path: 'user:id', component: UserDetailComponent}
 ];

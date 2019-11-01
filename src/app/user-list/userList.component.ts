@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from "rxjs";
-import { ApiService } from "./../api.service";
+import { ApiService } from "../api.service";
 import { User } from "./user";
 
 @Component({
@@ -14,13 +14,13 @@ import { User } from "./user";
             [class.selected]= "user === selectedUser"
             (click)="getUserById(user)"
           >
-            <p class="user__name">Nombre: {{user.name}}</p>
+            <p class="user__name"> Nombre: {{user.name}} </p>
           </li>
         </ul>
       </div>
       <app-user-detail [user]="selectedUser"></app-user-detail>
   `,
-  styleUrls: ['./main.component.sass']
+  styleUrls: ['./user-list.component.sass']
 })
 export class UserList implements OnInit {
   users: Observable<User[]>;
@@ -28,40 +28,17 @@ export class UserList implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.getUserList();
+    this.reloadData();
   }
-  getUserList(): void {
-    this.apiService.getUserList()
-      .subscribe(users => this.users = users);
-  }
-
-  deleteUser(id: number) {
-    this.apiService.deleteUser(id)
-      .subscribe(
-        data => {
-          console.log(data);
-          this.getUserList();
-        },
-        error => console.log(error));
-  }
-  updateUser(id: number, data: {}) {
-    this.apiService.updateUser(id, data)
-      .subscribe(
-        data => {
-          console.log(data);
-          this.getUserList();
-        },
-        error => console.log(error));
+  reloadData() {
+    this.users = this.apiService.getUserList();
   }
   getUserById(user: User){
     this.selectedUser = user;
     this.apiService.getUserById(user.id)
     .subscribe(
-      data => {
-        console.log(data);
-        this.getUserList();
-      },
-      error => console.log(error));
+      error => console.log(error)
+    );
   }
 }
 
