@@ -3,6 +3,9 @@ import { Observable } from "rxjs";
 import { User } from '../user-list/user';
 import { ApiService } from './../api.service';
 import { UserList } from '../user-list/userList.component';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-user-detail',
   template: `
@@ -40,11 +43,22 @@ import { UserList } from '../user-list/userList.component';
 export class UserDetailComponent implements OnInit {
   users: Observable<User[]>;
   public newName = '';
-  public newDate : '';
+  public newDate = '';
   @Input() user: User;
-  constructor(private apiService: ApiService, private listComponent: UserList) { }
+  constructor(
+    private apiService: ApiService,
+    private listComponent: UserList,
+    private route: ActivatedRoute,
+    private location: Location
+    ) { }
 
   ngOnInit() {
+    this.getUser();
+  }
+  getUser(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.apiService.getUserById(id)
+      .subscribe();
   }
   reloadData() {
     this.users = this.apiService.getUserList();

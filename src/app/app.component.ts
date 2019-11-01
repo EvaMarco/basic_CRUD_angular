@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
               role="button"
               routerLinkActive="active"
             >
-              Users List
+              Lista de Usuarios
             </a>
           </li>
           <li class="nav-item">
@@ -24,7 +24,7 @@ import { Component } from '@angular/core';
               role="button"
               routerLinkActive="active"
             >
-              Add new user
+              Añadir nuevo usuario
             </a>
           </li>
           <li class="nav-item">
@@ -34,12 +34,13 @@ import { Component } from '@angular/core';
               role="button"
               routerLinkActive="active"
             >
-              Update user
+              Actualizar información de usuario
             </a>
           </li>
         </ul>
       </nav>
       <router-outlet></router-outlet>
+      <app-messages></app-messages>
     </div>
     `,
   styleUrls: ['./app.component.sass']

@@ -13,8 +13,8 @@ import { Component, OnInit, Input } from '@angular/core';
           type="number"
           class="id__input"
           id="name"
-          [(ngModel)]="user.id"
           name="id"
+          (keyup)= "onKey('id', $event)"
         >
         </label>
         <label for="name">Nombre
@@ -22,8 +22,8 @@ import { Component, OnInit, Input } from '@angular/core';
           type="text"
           class="name__input"
           id="name"
-          [(ngModel)]="user.name"
           name="name"
+          (keyup)= "onKey('name', $event)"
         >
         </label>
         <label for="birthdate">Fecha de nacimiento
@@ -31,8 +31,8 @@ import { Component, OnInit, Input } from '@angular/core';
           type="datetime"
           class="date__input"
           id="birthdate"
-          [(ngModel)]="user.birthdate"
           name="birthdate"
+          (keyup)= "onKey('date', $event)"
         >
         </label>
         <button type="submit" class="btn submit__btn">Submit</button>
@@ -46,6 +46,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UserEditComponent implements OnInit {
   @Input() user: User;
+  public newName = '';
+  public newDate = '';
+  public newId = '';
   submitted = false;
   constructor(private apiService: ApiService) { }
 
@@ -55,14 +58,39 @@ export class UserEditComponent implements OnInit {
     this.submitted = false;
     console.log(user)
   }
-  save() {
-    this.apiService.updateUser(this.user)
-      .subscribe(data => console.log(data), error => console.log(error));
-      this.user = new User();
+  onKey(guilty, event: any) {
+
+    if(guilty === 'name'){
+      this.newName = event.target.value;
+      console.log('soy el nuevo nombre', this.newName);
+      return(this.newName);
+    }
+    else if(guilty === 'id'){
+      this.newId = event.target.value;
+      console.log('soy la nueva id', this.newId);
+      return(this.newId);
+    }
+    else{
+      this.newDate = event.target.value;
+      console.log('soy la nueva fecha', this.newDate)
+      return(this.newDate);
+    }
   }
+  save() {
+    const user = {
+      id: this.newId,
+      name: this.newName,
+      birthdate: this.newDate
+    }
+    this.apiService.updateUser(user)
+      .subscribe(
+        error => console.log(error)
+      );
+  }
+
   onSubmit() {
     this.submitted = true;
-    // this.save();
+    this.save();
   }
 
 

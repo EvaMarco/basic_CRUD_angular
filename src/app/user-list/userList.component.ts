@@ -12,13 +12,17 @@ import { User } from "./user";
           <li
             *ngFor="let user of users | async"
             [class.selected]= "user === selectedUser"
-            (click)="getUserById(user)"
           >
             <p class="user__name"> Nombre: {{user.name}} </p>
+            <p class="user__name"> Id: {{user.id}} </p>
+            <a
+              routerLink="/detail/{{user.id}}"
+            >
+            Modifcar usuario
+            </a>
           </li>
         </ul>
       </div>
-      <app-user-detail [user]="selectedUser"></app-user-detail>
   `,
   styleUrls: ['./user-list.component.sass']
 })
