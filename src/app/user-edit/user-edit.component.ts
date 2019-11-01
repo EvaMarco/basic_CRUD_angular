@@ -56,23 +56,20 @@ export class UserEditComponent implements OnInit {
   }
   updateUser(user): void {
     this.submitted = false;
-    console.log(user)
+
   }
   onKey(guilty, event: any) {
 
     if(guilty === 'name'){
       this.newName = event.target.value;
-      console.log('soy el nuevo nombre', this.newName);
       return(this.newName);
     }
     else if(guilty === 'id'){
       this.newId = event.target.value;
-      console.log('soy la nueva id', this.newId);
       return(this.newId);
     }
     else{
       this.newDate = event.target.value;
-      console.log('soy la nueva fecha', this.newDate)
       return(this.newDate);
     }
   }

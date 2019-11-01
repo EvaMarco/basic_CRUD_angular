@@ -5,6 +5,7 @@ import {UserAddComponent} from './user-add/user-add.component';
 import {UserDeleteComponent} from './user-delete/user-delete.component';
 import {UserDetailComponent} from './user-detail/user-detail.component';
 import {UserEditComponent} from './user-edit/user-edit.component';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
     { path: '', redirectTo: 'user', pathMatch: 'full' },
@@ -16,7 +17,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+    CommonModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

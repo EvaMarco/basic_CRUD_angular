@@ -54,7 +54,7 @@ export class UserAddComponent implements OnInit {
   }
   save() {
     this.apiService.createUser(this.user)
-      .subscribe(data => console.log(data), error => console.log(error));
+      .subscribe(error => console.log(error));
       this.user = new User();
   }
   onSubmit() {

@@ -14,7 +14,7 @@ Then install all dependences by running `npm install`.
 
 1. Create angular basic app using angular cli. `ng new angular7-crud-exercise`.
 2. Create diferent components we are going to need. 
-   1. `ng g c main`
+   1. `ng g c user-list`
    2. ` ng g c user-detail`
    3. `ng g c user-add`
    4. `ng g c user-edit`
@@ -24,7 +24,7 @@ Then install all dependences by running `npm install`.
 5. Add router tag in app.component.html.
 6. Create Service of Api Rest `ng g service api`. And Create all functions
    1. Create `getUserList` function.
-   2. Create `getUserByid` function.
+   2. Create `getUserById` function.
    3. Create `createUser` function.
    4. Create `updateUser` function.
    5. Create `deleteUser` function.   

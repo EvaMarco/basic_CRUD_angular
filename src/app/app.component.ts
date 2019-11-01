@@ -4,44 +4,34 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <div class="header__wrapper">
-      <h2 class="header__title">{{title}}</h2>
+      <h1 class="header__title">{{title}}</h1>
       <nav class="header__nav">
         <ul class="nav__link-list">
-          <li class="nav-item">
+          <li class="link-item">
             <a
               routerLink="users"
-              class="btn"
+              class="link btn"
               role="button"
               routerLinkActive="active"
             >
-              Lista de Usuarios
+              List
             </a>
           </li>
-          <li class="nav-item">
+          <li class="link-item">
             <a
               routerLink="add"
-              class="btn"
+              class="link btn"
               role="button"
               routerLinkActive="active"
             >
-              Añadir nuevo usuario
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              routerLink="update"
-              class="btn"
-              role="button"
-              routerLinkActive="active"
-            >
-              Actualizar información de usuario
+              New User
             </a>
           </li>
         </ul>
       </nav>
-      <router-outlet></router-outlet>
-      <app-messages></app-messages>
     </div>
+    <router-outlet></router-outlet>
+    <app-messages></app-messages>
     `,
   styleUrls: ['./app.component.sass']
 })
