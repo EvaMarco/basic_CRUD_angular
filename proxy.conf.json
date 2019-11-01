@@ -1,0 +1,6 @@
+{
+  "/api/user": {
+    "target": "http://hello-world.innocv.com",
+    "secure": false
+  }
+}
