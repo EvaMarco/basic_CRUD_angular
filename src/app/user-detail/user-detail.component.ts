@@ -9,18 +9,32 @@ import { Location } from '@angular/common';
   selector: 'app-user-detail',
   template: `
     <div class="detail__wrapper">
-      <h2 class="detail__title">user details</h2>
+      <h2 class="detail__title">
+        user details
+      </h2>
       <div class="wrapper name__wrapper">
-        <h3 class="subtitle name__subtitle">user name: </h3>
-        <p class="text name__text">{{userName}}</p>
+        <h3 class="subtitle name__subtitle">
+          user name:
+        </h3>
+        <p class="text name__text">
+          {{userName}}
+        </p>
       </div>
       <div class="wrapper id__wrapper">
-        <h3 class="subtitle id__subtitle">user id: </h3>
-        <p class="text id__text">{{userID}}</p>
+        <h3 class="subtitle id__subtitle">
+          user id:
+        </h3>
+        <p class="text id__text">
+          {{userID}}
+        </p>
       </div>
       <div class="wrapper date__wrapper">
-        <h3 class="subtitle date__subtitle">user birthdate: </h3>
-        <p class="text date__text">{{userDate | slice:0:10 }}</p>
+        <h3 class="subtitle date__subtitle">
+          user birthdate:
+        </h3>
+        <p class="text date__text">
+          {{userDate | slice:0:10 }}
+        </p>
       </div>
       <button
         class="btn go-back__btn"
@@ -62,13 +76,13 @@ export class UserDetailComponent implements OnInit {
         }
       );
   }
+
   reloadData() {
     this.users = this.apiService.getUserList();
   }
+
   goBack(): void {
     this.location.back();
   }
-
-
 }
 

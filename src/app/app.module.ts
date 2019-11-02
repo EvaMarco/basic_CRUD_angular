@@ -9,13 +9,13 @@ import { UserAddComponent } from './user-add/user-add.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MessagesComponent } from './messages/messages.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     UserList,
     UserAddComponent,
     UserEditComponent,
-
     MessagesComponent,
     UserDetailComponent
   ],
@@ -28,4 +28,5 @@ import { MessagesComponent } from './messages/messages.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

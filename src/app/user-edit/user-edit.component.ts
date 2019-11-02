@@ -16,8 +16,12 @@ import { Location } from '@angular/common';
         [hidden]="submitted"
       >
         <div class="id__wrapper">
-          <h3 class="id__subtitle">Update user:</h3>
-          <p class="id__text">{{oldId}}</p>
+          <h3 class="id__subtitle">
+            Update user:
+          </h3>
+          <p class="id__text">
+            {{oldId}}
+          </p>
         </div>
         <form class="form" (ngSubmit)="onSubmit()">
           <label
@@ -57,8 +61,13 @@ import { Location } from '@angular/common';
           </button>
         </form>
       </div>
-      <div class="success__wrapper" [hidden]="!submitted">
-        <h2 class="up-title"> Update Information </h2>
+      <div
+        class="success__wrapper"
+        [hidden]="!submitted"
+      >
+        <h2 class="up-title">
+          Update Information
+        </h2>
         <h3 class="up-title update__name-title">
           New Name:
         </h3>

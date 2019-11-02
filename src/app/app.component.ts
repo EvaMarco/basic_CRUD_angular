@@ -4,7 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <div class="header__wrapper">
-      <h1 class="header__title">{{title}}</h1>
+      <h1 class="header__title">
+        {{title}}
+      </h1>
       <nav class="header__nav">
         <ul class="nav__link-list">
           <li class="link-item">
