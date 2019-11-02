@@ -1,4 +1,4 @@
-# CrudExercise
+# Crud Exercise in Angular
 
 ![EvaMarco](src/assets/eva&#32;logo.png)
 
@@ -13,7 +13,9 @@ Then install all dependences by running `npm install`.
 ## 👣️ 👣️ Step by step
 
 1. Create basic components structure idea. 
-   -. ![EvaMarco](src/assets/ANGULAR_CRUD.jpg)
+   
+   - ![EvaMarco](src/assets/ANGULAR_CRUD.jpg)
+
 2. Create angular basic app using angular cli. `ng new angular7-crud-exercise`.
 3. Create diferent components we are going to need. 
    1. `ng g c user-list`
@@ -31,7 +33,7 @@ Then install all dependences by running `npm install`.
    4. Create `updateUser` function.
    5. Create `deleteUser` function.   
 8. Create api endpoint.
-9. Check getUsers component get the data, and represent it in screen.
+9.  Check getUsers component get the data, and represent it in screen.
 10. Create diferents route paths to each component in `app-routing.module.ts`
 11. Create a message service to inform of each step to the user. 
 12. Manage Detail component, change route when you press More button in list.
@@ -39,6 +41,7 @@ Then install all dependences by running `npm install`.
 14. Manage New user component, change route when you press New User button. 
 15. Delete item of list and reload ui when you press delete button. 
 16. When routing and functions works, add styles to each component. 
+17. Create diferent media queries to get a responsive desing. 
 
 
 ## Development server
@@ -64,4 +67,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# basic_CRUD_angular
+
+## Disclaimer
+  This was my first time creating an Angular app, and my first time using typescript. 
