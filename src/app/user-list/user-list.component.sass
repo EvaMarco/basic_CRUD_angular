@@ -21,20 +21,38 @@ li:nth-child(even)
   background-color: #F2F2F2
 
 .user__item
-  display: grid
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr
   padding: 10px
   border-bottom: 1px solid lightgrey
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
 
 .user-item__title
-  border-bottom: 1px solid lightgrey
-  display: grid
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr
-  font-weight: 700
-  padding: 5px
+  display: none
 
 .delete__btn
   background-color: red
 
 .item
-  margin: 0 auto
+  margin: 10px auto
+
+@media (min-width: 600px)
+  .user__item
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+    padding: 10px
+    border-bottom: 1px solid lightgrey
+
+  .user-item__title
+    border-bottom: 1px solid lightgrey
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+    font-weight: 700
+    padding: 5px
+
+  .item
+    margin: 0 auto
+
+  .small__title
+    display: none

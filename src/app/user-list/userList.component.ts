@@ -38,9 +38,11 @@ import { User } from "./user";
             (click)="getUserById(user)"
           >
             <p class="user__name">
+              <span class="small__title">Name:</span>
               {{user.name}}
             </p>
             <p class="item user__id">
+              <span class="small__title">Id:</span>
               {{user.id}}
             </p>
             <a

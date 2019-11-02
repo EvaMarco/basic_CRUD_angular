@@ -12,23 +12,33 @@ Then install all dependences by running `npm install`.
 
 ## 👣️ 👣️ Step by step
 
-1. Create angular basic app using angular cli. `ng new angular7-crud-exercise`.
-2. Create diferent components we are going to need. 
+1. Create basic components structure idea. 
+   -. ![EvaMarco](src/assets/ANGULAR_CRUD.jpg)
+2. Create angular basic app using angular cli. `ng new angular7-crud-exercise`.
+3. Create diferent components we are going to need. 
    1. `ng g c user-list`
    2. ` ng g c user-detail`
    3. `ng g c user-add`
    4. `ng g c user-edit`
    5. `ng g c user-delete`
-3. Create basic user object.
-4. Create routes arrays in `app-routing.module.ts`
-5. Add router tag in app.component.html.
-6. Create Service of Api Rest `ng g service api`. And Create all functions
+4. Create basic user object.
+5. Create routes arrays in `app-routing.module.ts`
+6. Add router tag in app.component.html.
+7. Create Service of Api Rest `ng g service api`. And Create all functions
    1. Create `getUserList` function.
    2. Create `getUserById` function.
    3. Create `createUser` function.
    4. Create `updateUser` function.
    5. Create `deleteUser` function.   
-7. 
+8. Create api endpoint.
+9. Check getUsers component get the data, and represent it in screen.
+10. Create diferents route paths to each component in `app-routing.module.ts`
+11. Create a message service to inform of each step to the user. 
+12. Manage Detail component, change route when you press More button in list.
+13. Manage Edit component, change route when you press Edit Button. 
+14. Manage New user component, change route when you press New User button. 
+15. Delete item of list and reload ui when you press delete button. 
+16. When routing and functions works, add styles to each component. 
 
 
 ## Development server

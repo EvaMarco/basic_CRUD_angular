@@ -19,6 +19,16 @@ import { Component } from '@angular/core';
               New User
             </a>
           </li>
+          <li class="link-item">
+          <a
+            routerLink="users"
+            class="link btn"
+            role="button"
+            routerLinkActive="active"
+          >
+            list
+          </a>
+        </li>
         </ul>
       </nav>
     </div>

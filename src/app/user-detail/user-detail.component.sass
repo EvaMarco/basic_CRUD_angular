@@ -12,7 +12,7 @@
 
 .wrapper
   display: flex
-  margin: 20px
+  flex-direction: column
 
 .subtitle
   display: inline-block
@@ -20,8 +20,18 @@
 
 .text
   display: inline-block
+  margin: 20px 10px
 
 .go-back__btn
   margin: 30px
   width: 150px
   font-size: 18px
+
+@media (min-width: 600px)
+  .wrapper
+    flex-direction: row
+    align-items: center
+    margin: 20px
+
+  .text
+    margin: 0 10px
