@@ -1,108 +1,74 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from "rxjs";
 import { ActivatedRoute } from '@angular/router';
-import { User } from '../user-list/user';
 import { ApiService } from './../api.service';
-import { UserList } from '../user-list/userList.component';
+import { User } from '../user-list/user';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-user-detail',
   template: `
-    <div *ngIf="user">
-      <h2>{{user.name | uppercase }} detail</h2>
-      <div>
-        <label>User ID </label> {{user.id}}
+    <div class="detail__wrapper">
+      <h2 class="detail__title">user details</h2>
+      <div class="wrapper name__wrapper">
+        <h3 class="subtitle name__subtitle">user name: </h3>
+        <p class="text name__text">{{userName}}</p>
       </div>
-      <div>
-        <label>User Birthdate </label> {{user.birthdate}}
+      <div class="wrapper id__wrapper">
+        <h3 class="subtitle id__subtitle">user id: </h3>
+        <p class="text id__text">{{userID}}</p>
       </div>
-      <a
-      routerLink="/update/{{user.id}}"
-      class = "user__link"
+      <div class="wrapper date__wrapper">
+        <h3 class="subtitle date__subtitle">user birthdate: </h3>
+        <p class="text date__text">{{userDate | slice:0:10 }}</p>
+      </div>
+      <button
+        class="btn go-back__btn"
+        (click)="goBack()"
       >
-      Edit
-      </a>
+        go back to list
+      </button>
     </div>
   `,
   styleUrls: ['./user-detail.component.sass']
 })
-// <div *ngIf="user">
-// <div>
-// <h2>{{user.name | uppercase }} detail</h2>
-// <div>
-//   <label>Name: </label> {{user.name}}
-//   <input
-//     [(ngModel)]="user.name"
-//     placehoder = "nombre"
-//     #username
-//     (keyup)= "onKey('name', $event)"
-//     value="user.name"
-//   >
-// </div>
-// <div>
-//   <label>BirthDate: </label> {{user.birthdate}}
-//   <input
-//     [(ngModel)]="user.birthdate"
-//     placehoder = "fecha de nacimiento"
-//     (keyup)="onKey('date', $event)"
-//     value= "user.birthdate"
-//   >
-// </div>
-// <div>
-//   <label>User ID </label> {{user.id}}
-// </div>
-// <button class="delete__btn" (click)='deleteUser(user.id)'>Delete</button>
-// <button class="update__btn" (click)='updateUser(user.id)'>Modify</button>
-// </div>
+
 export class UserDetailComponent implements OnInit {
+
   users: Observable<User[]>;
-  public newName = '';
-  public newDate = '';
+
+  public userName='';
+  public userDate = '';
+  public userID = {};
+
   @Input() user: User;
+
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute,
-    ) { }
+    private location: Location
+  ) { }
 
   ngOnInit() {
-    this.getUser();
+    this.getUser()
   }
   getUser(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.apiService.getUserById(id)
-      .subscribe();
+      .subscribe(data => {
+        this.userName = Object(data).name;
+        this.userDate = Object(data).birthdate;
+        this.userID = Object(data).id
+        }
+      );
   }
   reloadData() {
     this.users = this.apiService.getUserList();
   }
-  onKey(guilty, event: any) {
-    if(guilty == 'name'){
-      this.newName = event.target.value;
-      return(this.newName);
-    }
-    else{
-      this.newDate = event.target.value;
-      return(this.newDate);
-    }
+  goBack(): void {
+    this.location.back();
   }
-  deleteUser(id: number) {
-    this.apiService.deleteUser(id)
-    .subscribe(
-      error => console.log(error));
-      this.reloadData()
-    }
-  updateUser(id: number) {
-    const user = {
-      id: id,
-      name: this.newName,
-      birthdate: this.newDate
-    }
-    this.apiService.updateUser(user)
-      .subscribe(
-        error => console.log(error)
-      );
-      this.reloadData()
-  }
+
 
 }
 

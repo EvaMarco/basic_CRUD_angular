@@ -9,16 +9,6 @@ import { Component } from '@angular/core';
         <ul class="nav__link-list">
           <li class="link-item">
             <a
-              routerLink="users"
-              class="link btn"
-              role="button"
-              routerLinkActive="active"
-            >
-              List
-            </a>
-          </li>
-          <li class="link-item">
-            <a
               routerLink="add"
               class="link btn"
               role="button"
